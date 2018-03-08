@@ -1,0 +1,30 @@
+-------------------------------------------------------------------------------
+Test set: com.oms.controller.OrderControllerTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.635 sec <<< FAILURE! - in com.oms.controller.OrderControllerTest
+verifyCreate(com.oms.controller.OrderControllerTest)  Time elapsed: 0.142 sec  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.orderId", exception: json can not be null or empty
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:245)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertExistsAndReturn(JsonPathExpectationsHelper.java:260)
+	at org.springframework.test.util.JsonPathExpectationsHelper.exists(JsonPathExpectationsHelper.java:182)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers$3.match(JsonPathResultMatchers.java:116)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at com.oms.controller.OrderControllerTest.verifyCreate(OrderControllerTest.java:69)
+
+verifyFindOrderById(com.oms.controller.OrderControllerTest)  Time elapsed: 0.459 sec  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.orderId", exception: No results for path: $['orderId']
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:245)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertExistsAndReturn(JsonPathExpectationsHelper.java:260)
+	at org.springframework.test.util.JsonPathExpectationsHelper.exists(JsonPathExpectationsHelper.java:182)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers$3.match(JsonPathResultMatchers.java:116)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at com.oms.controller.OrderControllerTest.verifyFindOrderById(OrderControllerTest.java:54)
+
+verifyMalformedCreate(com.oms.controller.OrderControllerTest)  Time elapsed: 0.03 sec  <<< FAILURE!
+java.lang.AssertionError: No value at JSON path "$.errorCode", exception: json can not be null or empty
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:245)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:99)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers$2.match(JsonPathResultMatchers.java:99)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at com.oms.controller.OrderControllerTest.verifyMalformedCreate(OrderControllerTest.java:83)
+

@@ -1,0 +1,4 @@
+com\oms\AppTest.class
+com\oms\business\service\OrderServiceTest.class
+com\oms\common\util\PayloadValidatorTest.class
+com\oms\controller\OrderControllerTest.class

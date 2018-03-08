@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.oms.common.util.PayloadValidatorTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 sec <<< FAILURE! - in com.oms.common.util.PayloadValidatorTest
+validateInvalidPayLoad(com.oms.common.util.PayloadValidatorTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<true> but was:<false>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at com.oms.common.util.PayloadValidatorTest.validateInvalidPayLoad(PayloadValidatorTest.java:26)
+

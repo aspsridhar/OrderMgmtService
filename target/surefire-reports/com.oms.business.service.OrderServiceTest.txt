@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: com.oms.business.service.OrderServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.342 sec <<< FAILURE! - in com.oms.business.service.OrderServiceTest
+create(com.oms.business.service.OrderServiceTest)  Time elapsed: 0.048 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.oms.business.service.OrderServiceImpl.create(OrderServiceImpl.java:34)
+	at com.oms.business.service.OrderServiceTest.create(OrderServiceTest.java:52)
+
+testFindOrderById(com.oms.business.service.OrderServiceTest)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at com.oms.business.service.OrderServiceImpl.findOrderById(OrderServiceImpl.java:28)
+	at com.oms.business.service.OrderServiceTest.testFindOrderById(OrderServiceTest.java:38)
+
