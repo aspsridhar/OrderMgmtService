@@ -7,6 +7,7 @@ import com.oms.business.dao.repo.OrderRepo;
 import com.oms.business.domain.OrderDO;
 import com.oms.business.model.OrderDataBean;
 import com.oms.common.util.ObjectMapper;
+import com.oms.common.util.OrderUtil;
 
 /**
  * 
@@ -25,14 +26,15 @@ public class OrderServiceImpl extends OrderBaseService implements OrderService{
 	@Override
 	public OrderDataBean findOrderById(long id) {
 		OrderDO orderDO = orderRepo.findOne(id);
-		OrderDataBean order = mapper.map(orderDO,OrderDataBean.class);
+		OrderDataBean order = OrderUtil.convertToOrderDataBean(orderDO);//mapper.map(orderDO,OrderDataBean.class);
 		return order;
 	}
 
 	@Override
 	public OrderDataBean create(OrderDataBean order) {
-		OrderDO orderDO= mapper.map(order,OrderDO.class);
-		orderDO = orderRepo.save(orderDO);
+		//OrderDO orderDO= mapper.map(order,OrderDO.class);
+		OrderDO orderDO = OrderUtil.convertToOrderDO(order);//mapper.map(orderDO,OrderDataBean.class);
+		orderDO = orderRepo.save(orderDO);// Needs to update Cust info as well
 		return order;
 	}
 }

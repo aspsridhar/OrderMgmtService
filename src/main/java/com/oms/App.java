@@ -45,19 +45,4 @@ public class App
 			};
 		}
 	
-	/*@Bean
-	public CommandLineRunner setup(OrderRepo orderRepo) {
-		return (args) -> {
-
-			orderRepo.save(new OrderDO(1001L, 33.21, "Bricks", "In Process", false, "Order total of 20",
-					1234578));
-			orderRepo.save(new OrderDO(1002L, 43.23, "Bricks", "Delevered", true, "Order total of 20",
-					44567892));
-			orderRepo.save(new OrderDO(1003L, 12.12, "Bricks", "Pending", false, "Order total of 20",
-					1276890));
-			orderRepo.save(new OrderDO(1004L, 10.10, "Bricks", "Que", false, "Order total of 20",
-					123434343));
-			logger.info("The sample data has been generated");
-		};
-	}*/
 }

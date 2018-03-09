@@ -115,6 +115,10 @@ public class OrderDataBean implements Serializable{
 		this.description = description;
 		this.orderReferanceID = orderReferanceID;
 	}
+
+	public OrderDataBean() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	

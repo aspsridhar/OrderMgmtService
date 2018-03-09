@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.oms.business.dao.repo.OrderRepo;
 import com.oms.business.domain.OrderDO;
 import com.oms.business.model.OrderDataBean;
-import com.oms.common.util.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class OrderServiceTest {
@@ -24,9 +23,6 @@ public class OrderServiceTest {
 	
 	@InjectMocks
 	private OrderServiceImpl orderService;
-	
-	@InjectMocks
-	private ObjectMapper mapper;
 	
 	@Before
 	public void setup(){
@@ -54,7 +50,7 @@ public class OrderServiceTest {
 		when(orderRepo.save(orderDO)).thenReturn(orderDO);
 		OrderDataBean result = orderService.create(orderBean);
 		assertEquals(4234578, result.getOrderReferanceID());
-		assertEquals("Order total of 8", result.getDescription());
+		assertEquals(20, result.getNoOfBricks());
 		assertEquals(false, result.isCompleted());
 	}
 	

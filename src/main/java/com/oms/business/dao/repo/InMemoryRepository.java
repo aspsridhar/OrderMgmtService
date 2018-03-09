@@ -51,4 +51,22 @@ public abstract class InMemoryRepository<T extends OrderDataBean> {
         return elements.stream().filter(e -> Long.valueOf(e.getOrderId()).equals(id)).findFirst();
     }
     
+    public Optional<T> findById(Long id) {
+		return elements.stream().filter(e -> Long.valueOf(e.getOrderId()).equals(id)).findFirst();
+	}
+    
+    public boolean update(Long id, T updated) {
+		
+		if (updated == null) {
+			return false;
+		}
+		else {
+			Optional<T> element = findById(id);
+			element.ifPresent(original -> updateIfExists(original, updated));
+			return element.isPresent();
+		}
+	}
+	
+	protected abstract void updateIfExists(T original, T desired);
+    
 }

@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.oms.App;
-import com.oms.business.model.OrderDataBean;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,16 +37,7 @@ public class OrderControllerTest {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
 	}
-	OrderDataBean dataBean = new OrderDataBean(1002L, 43.23,20, "Bricks", "Delevered", true, "Order total of 20",1234578);
-	/*
-	private long orderId;
-	private double price;
-	private String category;
-	private String status;
-	private boolean isComplete;
-	private String description;
-	private long orderReferanceID;
-	 */
+
 	@Test
 	public void verifyFindOrderById() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/order/3").accept(MediaType.APPLICATION_JSON))
@@ -64,7 +54,7 @@ public class OrderControllerTest {
 	public void verifyCreate() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/order/")
         .contentType(MediaType.APPLICATION_JSON)
-        .content("{\"price\" : \"43.23\", \"completed\" : \"false\" }")
+        .content("{\"noOfBricks\" : \"20\", \"completed\" : \"false\" }")
 		.accept(MediaType.APPLICATION_JSON))
 		.andExpect(jsonPath("$.orderId").exists())
 		.andExpect(jsonPath("$.price").exists())

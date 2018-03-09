@@ -20,13 +20,13 @@ public class OrderBaseService {
     private final Logger LOG = LoggerFactory.getLogger(OrderBaseService.class);
 
     /**
-     * this should be some public constant valid for all use cases value can be 'eddy.concurrent.error' can be used as
+     * this should be some public constant valid for all use cases value can be 'OMS.concurrent.error' can be used as
      * key in the properties file to get the message in Mbean
      */
     public static final String CONCURRENT_MODIFICATION = "OMS.error.concurent";
 
     /**
-     * this should be public constant valid for all use cases value 'rdms.error.system' can be used as key in the
+     * this should be public constant valid for all use cases value 'OMS.error.system' can be used as key in the
      * properties file to get the generic message in Mbean or use case specific message can be used.
      */
     public static final String SYSTEM_ERROR = "OMS.error.system";

@@ -102,6 +102,15 @@ public class OrderDO implements Serializable{
 	public void setOrderReferanceID(long orderReferanceID) {
 		this.orderReferanceID = orderReferanceID;
 	}
+	
+
+	public int getNoOfBricks() {
+		return noOfBricks;
+	}
+
+	public void setNoOfBricks(int noOfBricks) {
+		this.noOfBricks = noOfBricks;
+	}
 
 	public OrderDO(long orderId,double price,int noOfBricks, String category, String status, boolean completed, String description,
 			long orderReferanceID) {
@@ -114,6 +123,10 @@ public class OrderDO implements Serializable{
 		this.completed = completed;
 		this.description = description;
 		this.orderReferanceID = orderReferanceID;
+	}
+
+	public OrderDO() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	
