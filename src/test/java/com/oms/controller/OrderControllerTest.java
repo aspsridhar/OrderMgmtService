@@ -38,7 +38,7 @@ public class OrderControllerTest {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
 
 	}
-	OrderDataBean dataBean = new OrderDataBean(1002L, 43.23, "Bricks", "Delevered", true, "Order total of 20",1234578);
+	OrderDataBean dataBean = new OrderDataBean(1002L, 43.23,20, "Bricks", "Delevered", true, "Order total of 20",1234578);
 	/*
 	private long orderId;
 	private double price;

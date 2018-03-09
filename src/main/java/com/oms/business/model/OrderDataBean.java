@@ -19,6 +19,8 @@ public class OrderDataBean implements Serializable{
 	@GeneratedValue
 	private long orderId;
 	
+	private int noOfBricks;
+	
 	private double price;
 	
 	private String category;
@@ -90,12 +92,23 @@ public class OrderDataBean implements Serializable{
 	public void setOrderReferanceID(long orderReferanceID) {
 		this.orderReferanceID = orderReferanceID;
 	}
+	
+	
 
-	public OrderDataBean(long orderId, double price, String category, String status, boolean completed, String description,
+	public int getNoOfBricks() {
+		return noOfBricks;
+	}
+
+	public void setNoOfBricks(int noOfBricks) {
+		this.noOfBricks = noOfBricks;
+	}
+
+	public OrderDataBean(long orderId, double price, int noOfBricks ,String category, String status, boolean completed, String description,
 			long orderReferanceID) {
 		super();
 		this.orderId = orderId;
 		this.price = price;
+		this.noOfBricks=noOfBricks;
 		this.category = category;
 		this.status = status;
 		this.completed = completed;

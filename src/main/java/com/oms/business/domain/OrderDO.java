@@ -26,6 +26,9 @@ public class OrderDO implements Serializable{
 	@Column(name="ORDER_ID", unique = true, nullable = false)
 	private long orderId;
 	
+	@Column(name="QUANTITY")
+	private int noOfBricks;
+	
 	@Column(name="PRICE")
 	private double price;
 	
@@ -100,10 +103,11 @@ public class OrderDO implements Serializable{
 		this.orderReferanceID = orderReferanceID;
 	}
 
-	public OrderDO(long orderId, double price, String category, String status, boolean completed, String description,
+	public OrderDO(long orderId,double price,int noOfBricks, String category, String status, boolean completed, String description,
 			long orderReferanceID) {
 		super();
 		this.orderId = orderId;
+		this.noOfBricks=noOfBricks;
 		this.price = price;
 		this.category = category;
 		this.status = status;

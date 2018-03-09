@@ -33,13 +33,13 @@ public class App
 		/*public CommandLineRunner setup(OrderRepo orderRepo) {*/
 			return (args) -> {
 
-				orderRepo.create(new OrderDataBean(1001L, 33.21, "Bricks", "In Process", false, "Order total of 20",
+				orderRepo.create(new OrderDataBean(1001L, 10.10,10, "Bricks", "In Process", false, "Order total of 10",
 						1234578));
-				orderRepo.create(new OrderDataBean(1002L, 43.23, "Bricks", "Delevered", true, "Order total of 20",
+				orderRepo.create(new OrderDataBean(1002L, 10.10,5, "Bricks", "Delevered", true, "Order total of 5",
 						44567892));
-				orderRepo.create(new OrderDataBean(1003L, 12.12, "Bricks", "Pending", false, "Order total of 20",
+				orderRepo.create(new OrderDataBean(1003L, 10.10,20, "Bricks", "Pending", false, "Order total of 20",
 						1276890));
-				orderRepo.create(new OrderDataBean(1004L, 10.10, "Bricks", "Que", false, "Order total of 20",
+				orderRepo.create(new OrderDataBean(1004L, 10.10,6, "Bricks", "Que", false, "Order total of 6",
 						123434343));
 				logger.info("The sample data has been generated");
 			};

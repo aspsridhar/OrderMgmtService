@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.oms.business.dao.repo.OrderRepository;
 import com.oms.business.model.OrderDataBean;
-import com.oms.common.util.PayloadValidator;
+import com.oms.common.util.OrderValidator;
 import com.oms.exception.OrderException;
 
 @RestController
-@RequestMapping(value = "/order", produces = "application/json")
 public class OrderController {
  
 	private static final Logger logger = LoggerFactory.getLogger(OrderController.class);
@@ -36,11 +35,11 @@ public class OrderController {
 	 * @return  Order referance Number
 	 * @throws OrderException
 	 */
-    /*@RequestMapping(value = "/Order", method = RequestMethod.POST)*/
+    @RequestMapping(value = "/Order", method = RequestMethod.POST)
    	public ResponseEntity<OrderDataBean> createOrder(@RequestBody OrderDataBean payload) throws OrderException{
     	logger.info("Payload to save " + payload);
-    	if (!PayloadValidator.validateCreatePayload(payload)){
-            throw new OrderException("Payload malformed, id must not be defined");
+    	if (!OrderValidator.validateOrderPayload(payload)){
+            throw new OrderException("Customer should have minumum Order greater than Zero");
     	}
 		return new ResponseEntity<OrderDataBean>(orderService.create(payload), HttpStatus.CREATED);
    	}
